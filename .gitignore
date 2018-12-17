@@ -1,1 +1,6 @@
-__pycache__/
+*/__pycache__/
+.git/
+*.pyc
+stack_env/
+.pytest_cache/
+*__pycache__/
