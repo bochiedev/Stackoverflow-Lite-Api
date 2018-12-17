@@ -12,7 +12,7 @@ users_list = []
 @version1.route('/post', methods=['POST'])
 def post_user():
     error = ""
-    username = request.get_json()['id']
+    id = request.get_json()['id']
     username = request.get_json()['username']
     email = request.get_json()['email']
     password = request.get_json()['password']
@@ -52,9 +52,8 @@ def post_user():
             'password':pw_hash
         }
         users_list.append(user)
-        result = jsonify(users_list)
-        result.status_code = 201
-        return result
+        result = jsonify({'users':users_list})
+        return make_response(result,201)
 
 
 
